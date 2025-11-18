@@ -41,5 +41,6 @@ has input.
 
 - [Lyndon Mykal Panton (developer)](https://github.com/lyndonpanton)
 - [CV Application (repository)](https://github.com/lyndonpanton/cv-application)
+- [react .gitignore (facebook/react)](https://github.com/facebook/react/blob/main/.gitignore)
 
 ## References
