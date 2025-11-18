@@ -24,6 +24,7 @@ has input.
 #### Managers, Packages, And APIs
 
 - npm
+- Fontawesome
 
 #### Development Tools
 
