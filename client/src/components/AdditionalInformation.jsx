@@ -1,7 +1,7 @@
-function AdditionalInformation() {
+function AdditionalInformation(props) {
     return (
         <section>
-            
+
         </section>
     );
 }

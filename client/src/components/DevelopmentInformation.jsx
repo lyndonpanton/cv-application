@@ -1,7 +1,7 @@
-function DevelopmentInformation() {
+function DevelopmentInformation(props) {
     return (
         <section>
-            
+
         </section>
     );
 }

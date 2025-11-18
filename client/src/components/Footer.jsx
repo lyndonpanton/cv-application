@@ -61,7 +61,7 @@ function Footer() {
             }
         ],
     };
-    
+
     const additionalInformation = {
         data: [
             {
@@ -101,12 +101,12 @@ function Footer() {
 
     return (
         <footer>
-            <DevelopmentInformation
+            {/* <DevelopmentInformation
                     information={ developmentInformation } />
             <AdditionalInformation
-                    information={ additionalInformation } />
+                    information={ additionalInformation } /> */}
             <CopyrightInformation
-                    information={ copyrightInformation } />
+                    copyrightInformation={ copyrightInformation } />
         </footer>
     );
 }
