@@ -3,7 +3,16 @@ import EducationalResult from "./EducationalResult.jsx";
 import PracticalResult from "./PracticalResult.jsx";
 
 function Result(props) {
-    const { isInputVisible, setIsInputVisible } = props;
+    const {
+            isInputVisible,
+            setIsInputVisible,
+            dataGeneral,
+            dataPersonalProfile,
+            dataKeySkills,
+            dataWorkExperience,
+            dataAchievementsAndAwards,
+            dataReferences
+    } = props;
 
     function updateVisibility() {
         setIsInputVisible(true);
@@ -14,7 +23,7 @@ function Result(props) {
             <section>
                 <h2>Your Generated CV</h2>
 
-                <GeneralResult />
+                <GeneralResult data={ dataGeneral } />
                 <EducationalResult />
                 <PracticalResult />
 

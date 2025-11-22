@@ -1,7 +1,14 @@
-function GeneralResult() {
+function GeneralResult(props) {
+    const data = props.data;
+
     return (
         <article>
-            <h3>General Result</h3>
+            <p>{ data.fullName }</p>
+            <p>{ data.homeAddress }</p>
+            <p>{ data.phoneNumber }</p>
+            <p>{ data.email }</p>
+            <p>{ data.linkedIn }</p>
+            <p>{ data.website }</p>
         </article>
     );
 }

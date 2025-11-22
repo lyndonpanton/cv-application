@@ -3,7 +3,24 @@ import EducationalInput from "./EducationalInput.jsx";
 import PracticalInput from "./PracticalInput.jsx";
 
 function Input(props) {
-    const { isInputVisible, setIsInputVisible } = props;
+    const {
+            isInputVisible,
+            setIsInputVisible,
+            dataGeneral,
+            setDataGeneral,
+            dataPersonalProfile,
+            setDataPersonalProfile,
+            dataKeySkills,
+            setDataKeySkills,
+            dataWorkExperience,
+            setDataWorkExperience,
+            dataEducation,
+            setDataEducation,
+            dataAchievementsAndAwards,
+            setDataAchievementsAndAwards,
+            dataReferences,
+            setDataReferences
+    } = props;
 
     function updateVisibility(e) {
         e.preventDefault();
@@ -17,7 +34,9 @@ function Input(props) {
                 <h2>Input Details</h2>
 
                 <form>
-                    <GeneralInput />
+                    <GeneralInput
+                            data={ dataGeneral }
+                            setData={ setDataGeneral } />
                     <EducationalInput />
                     <PracticalInput />
 
@@ -27,7 +46,7 @@ function Input(props) {
                             value="Submit" />
                 </form>
             </section>
-        )
+        );
     }
 
     return null;
