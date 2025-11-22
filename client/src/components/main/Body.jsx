@@ -34,10 +34,10 @@ function Body() {
                     setDataPersonalProfile={ setDataPersonalProfile }
                     dataKeySkills={ dataKeySkills }
                     setDataKeySkills={ setDataKeySkills }
-                    dataWorkExperience={ dataWorkExperience }
-                    setDataWorkExperience={ setDataWorkExperience }
                     dataEducation={ dataEducation }
                     setDataEducation={ setDataEducation }
+                    dataWorkExperience={ dataWorkExperience }
+                    setDataWorkExperience={ setDataWorkExperience }
                     dataAchievementsAndAwards={ dataAchievementsAndAwards }
                     setDataAchievementsAndAwards={ setDataAchievementsAndAwards }
                     dataReferences={ dataReferences }
@@ -48,8 +48,8 @@ function Body() {
                     dataGeneral={ dataGeneral }
                     dataPersonalProfile={ dataPersonalProfile }
                     dataKeySkills={ dataKeySkills }
-                    dataWorkExperience={ dataWorkExperience }
                     dataEducation={ dataEducation }
+                    dataWorkExperience={ dataWorkExperience }
                     dataAchievementsAndAwards={ dataAchievementsAndAwards }
                     dataReferences={ dataReferences } />
         </main>

@@ -1,7 +1,9 @@
-function EducationalResult() {
+function EducationalResult(props) {
+    const data = props.data;
+
     return (
         <article>
-            <h3>Educational</h3>
+            <h3>Education</h3>
         </article>
     );
 }

@@ -1,6 +1,10 @@
 import GeneralResult from "./GeneralResult.jsx";
+import ProfileResult from "./ProfileResult.jsx";
+import SkillsResult from "./SkillsResult.jsx";
 import EducationalResult from "./EducationalResult.jsx";
-import PracticalResult from "./PracticalResult.jsx";
+import ExperienceResult from "./ExperienceResult.jsx";
+import ReferencesResult from "./ReferencesResult.jsx";
+import AchievementsResult from "./AchievementsResult.jsx";
 
 function Result(props) {
     const {
@@ -9,6 +13,7 @@ function Result(props) {
             dataGeneral,
             dataPersonalProfile,
             dataKeySkills,
+            dataEducation,
             dataWorkExperience,
             dataAchievementsAndAwards,
             dataReferences
@@ -24,8 +29,12 @@ function Result(props) {
                 <h2>Your Generated CV</h2>
 
                 <GeneralResult data={ dataGeneral } />
-                <EducationalResult />
-                <PracticalResult />
+                <ProfileResult data={ dataPersonalProfile } />
+                <SkillsResult data={ dataKeySkills } />
+                <EducationalResult data={ dataEducation } />
+                <ExperienceResult data={ dataWorkExperience } />
+                <AchievementsResult data={ dataAchievementsAndAwards } />
+                <ReferencesResult data={ dataReferences } />
 
                 <button onClick={ updateVisibility }>Edit</button>
             </section>

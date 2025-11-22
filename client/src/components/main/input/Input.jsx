@@ -1,6 +1,10 @@
 import GeneralInput from "./GeneralInput.jsx";
+import ProfileInput from "./ProfileInput.jsx";
+import SkillsInput from "./SkillsInput.jsx";
 import EducationalInput from "./EducationalInput.jsx";
-import PracticalInput from "./PracticalInput.jsx";
+import ExperienceInput from "./ExperienceInput.jsx";
+import AchievementsInput from "./AchievementsInput.jsx";
+import ReferencesInput from "./ReferencesInput.jsx";
 
 function Input(props) {
     const {
@@ -37,8 +41,12 @@ function Input(props) {
                     <GeneralInput
                             data={ dataGeneral }
                             setData={ setDataGeneral } />
+                    <ProfileInput />
+                    <SkillsInput />
                     <EducationalInput />
-                    <PracticalInput />
+                    <ExperienceInput />
+                    <AchievementsInput />
+                    <ReferencesInput />
 
                     <input
                             type="submit"
