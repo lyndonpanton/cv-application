@@ -1,3 +1,5 @@
+import "../../styles/Footer.css";
+
 import DevelopmentInformation from "./DevelopmentInformation.jsx";
 import AdditionalInformation from "./AdditionalInformation.jsx";
 import CopyrightInformation from "./CopyrightInformation.jsx";

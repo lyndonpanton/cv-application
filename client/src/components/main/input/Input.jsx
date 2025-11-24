@@ -41,7 +41,9 @@ function Input(props) {
                     <GeneralInput
                             data={ dataGeneral }
                             setData={ setDataGeneral } />
-                    <ProfileInput />
+                    <ProfileInput
+                            data={ dataPersonalProfile }
+                            setData={ setDataPersonalProfile } />
                     <SkillsInput />
                     <EducationalInput />
                     <ExperienceInput />
