@@ -26,6 +26,10 @@ function Input(props) {
             setDataReferences
     } = props;
 
+    function preventEnterSubmission(e) {
+        e.preventDefault();
+    }
+
     function updateVisibility(e) {
         e.preventDefault();
         
@@ -44,11 +48,21 @@ function Input(props) {
                     <ProfileInput
                             data={ dataPersonalProfile }
                             setData={ setDataPersonalProfile } />
-                    <SkillsInput />
-                    <EducationalInput />
-                    <ExperienceInput />
-                    <AchievementsInput />
-                    <ReferencesInput />
+                    <SkillsInput
+                            data={ dataKeySkills }
+                            setData={ setDataKeySkills } />
+                    <EducationalInput
+                            data={ dataEducation }
+                            setData={ setDataEducation } />
+                    <ExperienceInput
+                            data={ dataWorkExperience }
+                            setData={ setDataWorkExperience } />
+                    <AchievementsInput
+                            data={ dataAchievementsAndAwards }
+                            setData={ setDataAchievementsAndAwards } />
+                    <ReferencesInput
+                            data={ dataReferences }
+                            setData={ setDataReferences } />
 
                     <input
                             type="submit"
