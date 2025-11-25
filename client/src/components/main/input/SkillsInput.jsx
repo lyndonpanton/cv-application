@@ -1,49 +1,30 @@
+import { useState } from "react";
+
+import SkillsInputItem from "./SkillsInputItem";
+
 function SkillsInput(props) {
+    const setData = props.setData;
     // Use this to update props
-    let skills = [];
-    let currentId = 1;
+    const [skills, setSkills] = useState([]);
+    const [currentId, setCurrentId] = useState(1);
+
+    console.log(skills);
 
     function deleteKeySkill(e) {
-        const id = e.target.parentElement["data-id"];
+        const id = parseInt(e.target.parentElement.getAttribute("dataid"));
 
-        // Update skills list in data
-        skills = skills.filter(function (skill) {
-            return skill.id !== id;
-        });
+        const updatedSkills = [];
 
-        // Update skills list in ui
-        const list = document.getElementById("key-skills-input-list");
-
-        while (list.firstChild) {
-            list.removeChild(list.firstChild);
+        for (let i = 0; i < skills.length; i++) {
+            if (skills[i].id === id) continue;
+            updatedSkills.push(skills[i]);
         }
 
-        skills.forEach(function (skill) {
-            const listItem = document.createElement("li");
-            listItem.classList.add("key-skills-input-list-item");
-            listItem["data-id"] = skill.id;
-
-            const listItemTitle = document.createElement("span");
-            listItemTitle.classList.add("key-skills-input-list-item-title");
-            listItem.textContent = skill.title;
-
-            const listItemDelete = document.createElement("button");
-            listItemDelete.classList.add("key-skills-input-list-item-button");
-            // Attribute for changing assistive title. Change text content to "X"
-            // icon afterwards
-            listItemDelete.textContent = "Delete";
-            listItemDelete.type = "button";
-            listItemDelete.addEventListener("click", deleteKeySkill);
-            listItemDelete.addEventListener("keydown", deleteKeySkill);
-
-            listItem.appendChild(listItemTitle);
-            listItem.appendChild(listItemDelete);
-
-            list.appendChild(listItem);
-        });
+        setSkills(updatedSkills);
+        setData(updatedSkills);
     }
 
-    function updateKeySkills(e) {
+    function addKeySkill(e) {
         let newSkill = { };
 
         if (e.type === "keyup") {
@@ -55,7 +36,7 @@ function SkillsInput(props) {
                 }
 
                 newSkill = {
-                    id: currentId++,
+                    id: currentId,
                     title: e.target.value
                 };
 
@@ -74,38 +55,17 @@ function SkillsInput(props) {
             }
 
             newSkill = {
-                id: currentId++,
+                id: currentId,
                 title: field.value
             };
 
             field.value = "";
         }
 
-        skills.push(newSkill);
+        setCurrentId(currentId + 1);
 
-        const list = document.getElementById("key-skills-input-list");
-
-        const newListItem = document.createElement("li");
-        newListItem.classList.add("key-skills-input-list-item");
-        newListItem["data-id"] = newSkill.id;
-
-        const newListItemTitle = document.createElement("span");
-        newListItemTitle.classList.add("key-skills-input-list-item-title");
-        newListItem.textContent = newSkill.title;
-
-        const newListItemDelete = document.createElement("button");
-        newListItemDelete.classList.add("key-skills-input-list-item-button");
-        // Attribute for changing assistive title. Change text content to "X"
-        // icon afterwards
-        newListItemDelete.textContent = "Delete";
-        newListItemDelete.type = "button";
-        newListItemDelete.addEventListener("click", deleteKeySkill);
-        newListItemDelete.addEventListener("keydown", deleteKeySkill);
-
-        newListItem.appendChild(newListItemTitle);
-        newListItem.appendChild(newListItemDelete);
-
-        list.appendChild(newListItem);
+        setData([...skills, newSkill]);
+        setSkills([...skills, newSkill]);
     }
 
     return (
@@ -119,16 +79,26 @@ function SkillsInput(props) {
                         id={ "key-skills-input" }
                         type={ "text" }
                         name={ "key-skills-input" }
-                        onKeyDown={ updateKeySkills } 
-                        onKeyUp={ updateKeySkills } />
+                        onKeyDown={ addKeySkill } 
+                        onKeyUp={ addKeySkill } />
             </label>
 
-            <button type={ "button" } onClick={ updateKeySkills }>
+            <button type={ "button" } onClick={ addKeySkill }>
                 Add Key Skill
             </button>
 
             <ul id={ "key-skills-input-list" }>
-
+                {
+                    skills.map(function (skill) {
+                        return (
+                                <SkillsInputItem
+                                        key={ skill.id }
+                                        dataId={ skill.id }
+                                        title={ skill.title }
+                                        deleteKeySkill={ deleteKeySkill } />
+                        );
+                    })
+                }
             </ul>
         </fieldset>
     );

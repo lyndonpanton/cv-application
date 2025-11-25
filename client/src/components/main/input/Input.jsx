@@ -26,10 +26,6 @@ function Input(props) {
             setDataReferences
     } = props;
 
-    function preventEnterSubmission(e) {
-        e.preventDefault();
-    }
-
     function updateVisibility(e) {
         e.preventDefault();
         
