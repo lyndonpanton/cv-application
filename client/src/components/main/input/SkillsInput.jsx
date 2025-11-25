@@ -5,23 +5,14 @@ import SkillsInputItem from "./SkillsInputItem";
 function SkillsInput(props) {
     const setData = props.setData;
     // Use this to update props
-    const [skills, setSkills] = useState([]);
+    const [skills, setSkills] = useState(props.data);
     const [currentId, setCurrentId] = useState(1);
-
-    console.log(skills);
 
     function deleteKeySkill(e) {
         const id = parseInt(e.target.parentElement.getAttribute("dataid"));
 
-        const updatedSkills = [];
-
-        for (let i = 0; i < skills.length; i++) {
-            if (skills[i].id === id) continue;
-            updatedSkills.push(skills[i]);
-        }
-
-        setSkills(updatedSkills);
-        setData(updatedSkills);
+        setSkills(skills.filter(function (skill) { return skill.id !== id }));
+        setData(skills.filter(function (skill) { return skill.id !== id }));
     }
 
     function addKeySkill(e) {
