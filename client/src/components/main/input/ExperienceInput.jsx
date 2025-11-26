@@ -198,7 +198,13 @@ function ExperienceInput(props) {
     }
 
     function deleteExperienceItem(id) {
-        console.log("Deleting item: " + id);
+        setExperience(experience.filter(function (item) {
+            return item.id !== id;
+        }));
+        
+        setData(experience.filter(function (item) {
+            return item.id !== id;
+        }));
     }
     
     function updateStartYear(e) {
