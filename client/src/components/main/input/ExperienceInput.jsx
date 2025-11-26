@@ -161,9 +161,9 @@ function ExperienceInput(props) {
         setExperience([...experience, {
             id: currentId,
             startYear: startYear,
-            startMonth: startMonth,
+            startMonth: startMonth[0].toUpperCase() + startMonth.slice(1).toLowerCase(),
             endYear: endYear,
-            endMonth: endMonth,
+            endMonth: endMonth[0].toUpperCase() + endMonth.slice(1).toLowerCase(),
             role: role,
             outline: outline,
             responsibilityOne: responsibilityOne,
@@ -174,9 +174,9 @@ function ExperienceInput(props) {
         setData([...experience, {
             id: currentId,
             startYear: startYear,
-            startMonth: startMonth,
+            startMonth: startMonth[0].toUpperCase() + startMonth.slice(1).toLowerCase(),
             endYear: endYear,
-            endMonth: endMonth,
+            endMonth: endMonth[0].toUpperCase() + endMonth.slice(1).toLowerCase(),
             role: role,
             outline: outline,
             responsibilityOne: responsibilityOne,
@@ -201,7 +201,7 @@ function ExperienceInput(props) {
         setExperience(experience.filter(function (item) {
             return item.id !== id;
         }));
-        
+
         setData(experience.filter(function (item) {
             return item.id !== id;
         }));
