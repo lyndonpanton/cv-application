@@ -4,7 +4,7 @@ import SkillsInputItem from "./SkillsInputItem";
 
 function SkillsInput(props) {
     const setData = props.setData;
-    // Use this to update props
+    
     const [skills, setSkills] = useState(props.data);
     const [currentId, setCurrentId] = useState(1);
 

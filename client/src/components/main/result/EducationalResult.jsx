@@ -1,9 +1,17 @@
+import EducationalResultItem from "./EducationalResultItem.jsx";
+
 function EducationalResult(props) {
     const data = props.data;
 
     return (
         <article>
-            <h3>Education</h3>
+            <h2>Education</h2>
+
+            {
+                data.map(function (course) {
+                    <EducationalResultItem />
+                })
+            }
         </article>
     );
 }

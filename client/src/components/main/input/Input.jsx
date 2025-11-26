@@ -47,12 +47,12 @@ function Input(props) {
                     <SkillsInput
                             data={ dataKeySkills }
                             setData={ setDataKeySkills } />
-                    <EducationalInput
-                            data={ dataEducation }
-                            setData={ setDataEducation } />
                     <ExperienceInput
                             data={ dataWorkExperience }
                             setData={ setDataWorkExperience } />
+                    <EducationalInput
+                            data={ dataEducation }
+                            setData={ setDataEducation } />
                     <AchievementsInput
                             data={ dataAchievementsAndAwards }
                             setData={ setDataAchievementsAndAwards } />

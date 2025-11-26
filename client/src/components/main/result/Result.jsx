@@ -31,8 +31,8 @@ function Result(props) {
                 <GeneralResult data={ dataGeneral } />
                 <ProfileResult data={ dataPersonalProfile } />
                 <SkillsResult data={ dataKeySkills } />
-                <EducationalResult data={ dataEducation } />
                 <ExperienceResult data={ dataWorkExperience } />
+                <EducationalResult data={ dataEducation } />
                 <AchievementsResult data={ dataAchievementsAndAwards } />
                 <ReferencesResult data={ dataReferences } />
 
