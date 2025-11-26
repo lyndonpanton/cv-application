@@ -1,7 +1,7 @@
 import GeneralInput from "./GeneralInput.jsx";
 import ProfileInput from "./ProfileInput.jsx";
 import SkillsInput from "./SkillsInput.jsx";
-import EducationalInput from "./EducationalInput.jsx";
+import EducationInput from "./EducationInput.jsx";
 import ExperienceInput from "./ExperienceInput.jsx";
 import AchievementsInput from "./AchievementsInput.jsx";
 import ReferencesInput from "./ReferencesInput.jsx";
@@ -50,7 +50,7 @@ function Input(props) {
                     <ExperienceInput
                             data={ dataWorkExperience }
                             setData={ setDataWorkExperience } />
-                    <EducationalInput
+                    <EducationInput
                             data={ dataEducation }
                             setData={ setDataEducation } />
                     <AchievementsInput

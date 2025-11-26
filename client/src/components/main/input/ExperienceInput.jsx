@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import ExperienceInputItem from "./ExperienceInputItem.jsx";
 
+// Add a field for company name
 function ExperienceInput(props) {
     const setData = props.setData;
 
@@ -22,13 +23,6 @@ function ExperienceInput(props) {
     const currentYear = new Date().getFullYear();
 
     function addExperienceItem(e) {
-        /*
-            - start year must not be empty
-            - start year must be an integer
-            - start year must be greater than or equal to 1900
-            - start year must be less than or equal to current year
-        */
-
         if (startYear.trim() === "") {
             return;
         }
@@ -45,14 +39,6 @@ function ExperienceInput(props) {
             return;
         }
 
-        /*
-            - end year must not be empty
-            - end year must be an integer
-            - end year must be greater than or equal to 1900
-            - end year must be greater than or equal to start year
-            - end year must be less than or equal to current year
-        */
-
         if (endYear.trim() === "") {
             return;
         }
@@ -65,29 +51,17 @@ function ExperienceInput(props) {
             return;
         }
 
-        if (endYear > currentYear) {
-            return;
-        }
+        // if (endYear > currentYear) {
+        //     return;
+        // }
 
         if (endYear < startYear) {
             return;
         }
 
-        /*
-            - start month must not be empty
-            - start month must be a valid month
-        */
-
         if (startMonth === "---" || startMonth === "") {
             return;
         }
-
-        /*
-            - end month must not be empty
-            - end month must be a valid month
-            - if start year and end year are equal: end month must be greater
-                than start month
-        */
         
         if (endMonth === "---" || endMonth === "") {
             return;
@@ -97,11 +71,6 @@ function ExperienceInput(props) {
             return;
         }
 
-        /*
-            - role must not be empty
-            - role must be less than or equal 40 characters
-        */
-
         if (role === "") {
             return;
         }
@@ -110,11 +79,6 @@ function ExperienceInput(props) {
             return;
         }
 
-        /*
-            - outline must not be empty
-            - outline must be less than or equal 250 characters
-        */
-
         if (outline === "") {
             return;
         }
@@ -122,11 +86,6 @@ function ExperienceInput(props) {
         if (outline.length > 250) {
             return;
         }
-
-        /*
-            - all responsibilities must not be empty
-            - all responsibilities must be less than 100 characters
-        */
 
         if (responsibilityOne === "") {
             return;

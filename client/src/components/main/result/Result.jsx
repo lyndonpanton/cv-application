@@ -1,7 +1,7 @@
 import GeneralResult from "./GeneralResult.jsx";
 import ProfileResult from "./ProfileResult.jsx";
 import SkillsResult from "./SkillsResult.jsx";
-import EducationalResult from "./EducationalResult.jsx";
+import EducationResult from "./EducationResult.jsx";
 import ExperienceResult from "./ExperienceResult.jsx";
 import ReferencesResult from "./ReferencesResult.jsx";
 import AchievementsResult from "./AchievementsResult.jsx";
@@ -32,7 +32,7 @@ function Result(props) {
                 <ProfileResult data={ dataPersonalProfile } />
                 <SkillsResult data={ dataKeySkills } />
                 <ExperienceResult data={ dataWorkExperience } />
-                <EducationalResult data={ dataEducation } />
+                <EducationResult data={ dataEducation } />
                 <AchievementsResult data={ dataAchievementsAndAwards } />
                 <ReferencesResult data={ dataReferences } />
 

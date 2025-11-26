@@ -1,4 +1,4 @@
-import EducationalResultItem from "./EducationalResultItem.jsx";
+import EducationResultItem from "./EducationResultItem.jsx";
 
 function EducationalResult(props) {
     const data = props.data;
@@ -9,7 +9,7 @@ function EducationalResult(props) {
 
             {
                 data.map(function (course) {
-                    <EducationalResultItem />
+                    <EducationResultItem />
                 })
             }
         </article>
