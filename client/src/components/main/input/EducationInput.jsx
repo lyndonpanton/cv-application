@@ -15,12 +15,33 @@ function EducationInput(props) {
     const [endYear, setEndYear] = useState("");
     const [endMonth, setEndMonth] = useState("");
 
+    const currentYear = new Date().getFullYear();
+
     function addEducationItem(e) {
-        // Validation...
+        if (school.trim() === "") return;
+        if (school.length > 100) return;
 
-        // Key events...
+        if (course.trim() === "") return;
+        if (course.length > 100) return;
 
-        // State setting...
+        if (startYear.trim() === "") return;
+        if (isNaN(startYear)) return;
+        if (startYear < 1900) return;
+        if (startYear > currentYear) return;
+
+        if (endYear.trim() === "") return;
+        if (isNaN(endYear)) return;
+        if (endYear < startYear) return;
+
+        if (startMonth === "---" || startMonth === "") return;
+        if (endMonth === "---" || endMonth === "") return;
+        if (startYear === endYear && parseInt(endMonth) < parseInt(startMonth))
+            return;
+
+        if (e.type === "keyup") {
+            if (e.key !== "Enter") return;
+        }
+
         setEducation([...education, {
             id: currentId,
             school: school,
@@ -39,12 +60,10 @@ function EducationInput(props) {
             startMonth: startMonth,
             endYear: endYear,
             endMonth: endMonth
-            
         }]);
 
         setCurrentId(currentId + 1);
 
-        // State resetting...
         setSchool("");
         setCourse("");
         setStartYear("");
@@ -59,26 +78,32 @@ function EducationInput(props) {
 
     function updateCourse(e) {
         setCourse(e.target.value);
+        console.log(e.target.value);
     }
 
     function updateStartYear(e) {
         setStartYear(e.target.value);
+        console.log(e.target.value);
     }
 
     function updateStartMonth(e) {
         setStartMonth(e.target.value);
+        console.log(e.target.value);
     }
 
     function updateSchool(e) {
         setSchool(e.target.value);
+        console.log(e.target.value);
     }
 
     function updateEndYear(e) {
         setEndYear(e.target.value);
+        console.log(e.target.value);
     }
 
     function updateEndMonth(e) {
         setEndMonth(e.target.value);
+        console.log(e.target.value);
     }
 
     return (
@@ -195,10 +220,10 @@ function EducationInput(props) {
                                 <EducationInputItem
                                         key={ item.id }
                                         dataId={ item.id }
-                                        startYear={ startYear }
-                                        endYear={ endYear }
-                                        school={ school }
-                                        course={ course } />
+                                        startYear={ item.startYear }
+                                        endYear={ item.endYear }
+                                        school={ item.school }
+                                        course={ item.course } />
                         );
                     })
                 }

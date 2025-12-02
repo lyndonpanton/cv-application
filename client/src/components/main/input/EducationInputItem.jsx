@@ -1,7 +1,12 @@
 function EducationInputItem(props) {
+    const { school, course } = props;
+    console.log(school);
+    console.log(course);
+
     return (
         <li>
-            text
+            <span>{ course }</span> (<span>{ school }</span>)
+            <button>Delete</button>
         </li>
     );
 }
