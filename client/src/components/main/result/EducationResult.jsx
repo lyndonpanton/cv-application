@@ -1,15 +1,19 @@
 import EducationResultItem from "./EducationResultItem.jsx";
 
 function EducationalResult(props) {
-    const data = props.data;
+    const education = props.data;
 
     return (
         <article>
             <h2>Education</h2>
 
             {
-                data.map(function (course) {
-                    <EducationResultItem />
+                education.map(function (item) {
+                    return (
+                            <EducationResultItem
+                                    key={ item.id }
+                                    data={ item } />
+                    );
                 })
             }
         </article>

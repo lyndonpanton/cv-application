@@ -91,7 +91,7 @@ function EducationInput(props) {
     }
 
     function updateStartMonth(e) {
-        setStartMonth(e.target.value
+        setStartMonth(e.target.value);
     }
 
     function updateSchool(e) {
