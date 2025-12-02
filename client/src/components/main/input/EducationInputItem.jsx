@@ -1,12 +1,12 @@
 function EducationInputItem(props) {
-    const { school, course } = props;
+    const { dataId, school, course, deleteFunction } = props;
     console.log(school);
     console.log(course);
 
     return (
         <li>
             <span>{ course }</span> (<span>{ school }</span>)
-            <button>Delete</button>
+            <button onClick={ () => deleteFunction(dataId) }>Delete</button>
         </li>
     );
 }

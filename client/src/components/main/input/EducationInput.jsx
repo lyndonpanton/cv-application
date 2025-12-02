@@ -72,38 +72,38 @@ function EducationInput(props) {
         setEndMonth("");
     }
     
-    function deleteEducationItem(e) {
-        
+    function deleteEducationItem(id) {
+        setEducation(education.filter(function (item) {
+            return item.id !== id;
+        }));
+
+        setData(education.filter(function (item) {
+            return item.id !== id;
+        }));
     }
 
     function updateCourse(e) {
         setCourse(e.target.value);
-        console.log(e.target.value);
     }
 
     function updateStartYear(e) {
-        setStartYear(e.target.value);
-        console.log(e.target.value);
+        setStartYear(e.target.value)
     }
 
     function updateStartMonth(e) {
-        setStartMonth(e.target.value);
-        console.log(e.target.value);
+        setStartMonth(e.target.value
     }
 
     function updateSchool(e) {
         setSchool(e.target.value);
-        console.log(e.target.value);
     }
 
     function updateEndYear(e) {
         setEndYear(e.target.value);
-        console.log(e.target.value);
     }
 
     function updateEndMonth(e) {
         setEndMonth(e.target.value);
-        console.log(e.target.value);
     }
 
     return (
@@ -223,7 +223,8 @@ function EducationInput(props) {
                                         startYear={ item.startYear }
                                         endYear={ item.endYear }
                                         school={ item.school }
-                                        course={ item.course } />
+                                        course={ item.course }
+                                        deleteFunction={ deleteEducationItem } />
                         );
                     })
                 }
